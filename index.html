@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <header>
+    <h1>Hi, I'm Sandya</h1>
+    <p>Aspiring Developer | Creative Designer | Learner</p>
+    <a href="#certificates" class="btn">View Certificates</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Welcome to my portfolio! I am passionate about technology, web development,
+      and creative design. This portfolio showcases my skills, achievements,
+      and certifications.
+    </p>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates">
+    <h2>My Certificates</h2>
+    <button class="btn" onclick="document.getElementById('fileInput').click();">Add Certificate</button>
+    <input type="file" id="fileInput" accept="image/*" multiple onchange="previewCertificates(event)">
+    <div class="certificates" id="certificateGallery"></div>
+  </section>
+
+  <!-- Footer / Contact Section -->
+  <footer id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: sandya7559@gmail.com</p>
+    <p>Phone: +91 8248029270</p>
+    <p>LinkedIn: linkedin.com/in/sandy</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

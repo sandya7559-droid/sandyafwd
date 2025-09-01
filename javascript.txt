@@ -1,0 +1,29 @@
+function previewCertificates(event) {
+  let storedImages = JSON.parse(localStorage.getItem("certificates")) || [];
+  const files = event.target.files;
+
+  for (let file of files) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      storedImages.push(e.target.result);
+      localStorage.setItem("certificates", JSON.stringify(storedImages));
+      displayCertificates();
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function displayCertificates() {
+  const gallery = document.getElementById('certificateGallery');
+  gallery.innerHTML = "";
+  let storedImages = JSON.parse(localStorage.getItem("certificates")) || [];
+
+  storedImages.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    gallery.appendChild(img);
+  });
+}
+
+// Show saved images when page loads
+window.onload = displayCertificates;
